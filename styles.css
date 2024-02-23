@@ -1,0 +1,177 @@
+body {
+    background-color: #5A5A5A;
+    color: white;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+.large{
+  margin: 50px;
+}
+
+.little {
+  margin: 20px;
+  border-bottom: 2px solid black;
+  width: 80%;
+}
+
+.spending-tracker {
+    border: 5px solid rgb(255, 179, 0);
+    background-color: white;
+    color: black;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    width: 300px;
+    height: 400px;
+    flex-direction: column;
+    overflow: auto;
+    padding-left: 5px;
+    font-size: 20px;
+}
+
+.record-body label, .balance-body label{
+    margin: 5px 0;
+    text-align: left;
+    font-weight: bold;
+}
+
+#account-name, #init-balance {
+  font-size: 20px;
+}
+
+#account-name, #amount, #description, #init-balance, #date-input{
+    width: 95%;
+}
+
+#description {
+    height: 90px;
+}
+
+#init-balance-btn, #record-menu-btn, #add-balance-btn, #blance-btn, #check-balance-btn, #record-btn, #check-record-btn, #add-record-btn, #clear-all-btn{
+    margin: 5px 0;
+    width: 96%;
+}
+
+.close-form-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  .close-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  #home {
+    background: none;
+    border: none;
+    position: absolute;
+    bottom: top;
+    left: 86%;
+  }
+
+  .home-btn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .task-form-header {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  .discard-message-text, #no-balance, #account-existed, #not-enough-balance, .clear-data-text {
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .btn {
+    margin: 0 25px;
+    width: 70px;
+    height: 30px;
+    background-color: rgb(251, 193, 58);
+    border-radius: 10px;
+    border: 2px solid rgb(255, 179, 0);
+  }
+
+  .normal {
+    margin: 0 10px;
+  }
+
+  .small {
+    height: 20px;
+  }
+
+  .one {
+    position: absolute;
+    top: 35%;
+  }
+
+  .two {
+    position: absolute;
+    top: 50%;
+  }
+
+  .three {
+    position: absolute;
+    top: 65%;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  #add-balance-btn {
+    position: absolute;
+    top: 90%;
+  }
+
+  .no-content {
+    text-align: center;
+  }
+
+  #greeting {
+    text-align: center;
+    color: black;
+  }
+
+  dialog {
+    font-size: 15px;
+  }
+
+  .output {
+    font-size: 17px;
+  }
+
+  #confirm-clear-btn {
+    background-color: red;
+    border: 2px solid rgb(255, 25, 25);
+  }
+
+  #delete-message {
+    position: absolute;
+    bottom: 10%;
+    left: 26%;
+  }

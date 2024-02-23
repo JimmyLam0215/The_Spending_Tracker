@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>The Spending Tracker</title>
+</head>
+<body>
+    <h1>The spending tracker</h1>
+    <div class="spending-tracker">
+        <div id="greeting"><h3><strong>Welcome!</strong></h3></div>
+        <button id="blance-btn" class="btn one">Payment Accounts</button>
+        <button id="record-menu-btn" class="btn two">Records</button>
+        <button id="clear-all-btn" class="btn three">Clear All Data</button>
+        <button id="init-balance-btn" class="btn one hidden">Add Payment Accounts</button>
+        <button id="check-balance-btn" class="btn two hidden">Check Payment Accounts</button>
+        <button id="home" class="hidden" type="button">
+            <svg class="home-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" fill="rgb(251, 193, 58)"/></svg>
+        </button>
+        <button id="record-btn" class="btn one hidden">Add Records</button>
+        <button id="check-record-btn" class="btn two hidden">Check Records</button>
+        <section>
+            <form class="balance-form hidden" id="balance-form">
+                <div class="balance-form-header">
+                    <button id="close-task-form-btn-balance" class="close-form-btn" type="button" aria-label="close">
+                      <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px"><path fill="#F44336" d="M21.5 4.5H26.501V43.5H21.5z" transform="rotate(45.001 24 24)" /><path fill="#F44336" d="M21.5 4.5H26.5V43.501H21.5z" transform="rotate(135.008 24 24)" /></svg>
+                    </button>
+                  </div>
+                <div class="balance-body">
+                    <div class="divider large"></div>
+                    <label for="account-name">Payment Account Name: </label>
+                    <input id="account-name" type="text" required><br>
+                    <div class="divider large"></div>
+                    <label for="init-balance">Initial Amount: </label>
+                    <input id="init-balance" type="number" min="0" required>
+                </div>
+                <div class="form-footer">
+                    <button id="add-balance-btn" class="btn" type="submit">Add payment account</button>
+                </div>
+            </form>
+            <dialog id="account-existed">
+                <form method="dialog">
+                    <p>Account Existed!</p>
+                    <button id="okay">Ok</button>
+                </form>
+            </dialog>
+            <dialog id="confirm-clear-all-data">
+                <form method="dialog">
+                <p class="clear-data-text">Clear All Records (Can not be recovered)?</p>
+                <div class="confirm-close-dialog-btn-container">
+                    <button id="cancel-btn" class="btn small">
+                    Cancel
+                    </button>
+                    <button id="confirm-clear-btn" class="btn small">
+                    Confirm
+                    </button>
+                </div>
+                </form>
+            </dialog>
+            <dialog id="confirm-close-dialog-balance">
+                <form method="dialog">
+                <p class="discard-message-text">Discard unsaved changes?</p>
+                <div class="confirm-close-dialog-btn-container">
+                    <button id="cancel-btn" class="btn small">
+                    Cancel
+                    </button>
+                    <button id="discard-btn-balance" class="btn small">
+                    Discard
+                    </button>
+                </div>
+                </form>
+            </dialog>
+        </section>
+        <section>
+            <form class="record-form hidden" id="record-form">
+                <div class="record-form-header">
+                    <button id="close-task-form-btn-account" class="close-form-btn" type="button" aria-label="close">
+                      <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px"><path fill="#F44336" d="M21.5 4.5H26.501V43.5H21.5z" transform="rotate(45.001 24 24)" /><path fill="#F44336" d="M21.5 4.5H26.5V43.501H21.5z" transform="rotate(135.008 24 24)" /></svg>
+                    </button>
+                  </div>
+                <div class="record-body">
+                    <label for="account-name">Payment Account Name: </label>
+                    <select id="account">
+                        
+                    </select>
+                    <label for="type-of-spending">Spending type:</label>
+                    <input id="type-of-spending" type="radio" value="income" name="type-of-spending"> Income
+                    <input id="type-of-spending" type="radio" value="expense" name="type-of-spending"> Expense <br>
+                    <label for="amount" required>Amount: </label>
+                    <input id="amount" type="number" min="0" required>
+                    <label for="date-input">Date:</label>
+                    <input type="date" id="date-input" value="" />
+                    <label for="description">Description:</label>
+                    <textarea id="description"></textarea>
+                </div>
+                <div class="form-footer">
+                    <button id="add-record-btn" class="btn" type="submit">Add record</button>
+                </div>
+            </form>
+            <dialog id="confirm-close-dialog-account">
+                <form method="dialog">
+                <p class="discard-message-text">Discard unsaved changes?</p>
+                <div class="confirm-close-dialog-btn-container">
+                    <button id="cancel-btn" class="btn">
+                    Cancel
+                    </button>
+                    <button id="discard-btn-account" class="btn">
+                    Discard
+                    </button>
+                </div>
+                </form>
+                </dialog>
+            <dialog id="no-balance">
+                <form method="dialog">
+                    <p>Please initialize payment accounts!</p>
+                    <button id="confirm">Confirm</button>
+                </form>
+                </dialog>
+            <dialog id="not-enough-balance">
+                <form method="dialog">
+                    <p>Account do not have enough money left!</p>
+                    <button id="exit">Exit</button>
+                </form>
+            </dialog>
+        </section>
+        <section>
+            <div id="output">
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
